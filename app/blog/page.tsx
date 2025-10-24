@@ -53,7 +53,6 @@ export default async function BlogPage() {
                     <h2 className="text-xl font-semibold text-neutral-900 group-hover:text-emerald-600 transition-colors mb-2 line-clamp-2">
                       {post.title}
                     </h2>
-                    {post.excerpt && <p className="text-neutral-600 text-sm line-clamp-3 mt-auto">{post.excerpt}</p>}
                   </div>
                 </article>
               </Link>
