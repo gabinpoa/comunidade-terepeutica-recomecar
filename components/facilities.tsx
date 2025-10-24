@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const facilities = [
   {
@@ -55,25 +55,32 @@ const facilities = [
     image: "/peaceful-outdoor-patio.jpg",
     alt: "Pátio externo",
   },
-]
+];
 
 export function Facilities() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? facilities.length - 1 : prevIndex - 1))
-  }
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? facilities.length - 1 : prevIndex - 1
+    );
+  };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === facilities.length - 1 ? 0 : prevIndex + 1))
-  }
+    setCurrentIndex((prevIndex) =>
+      prevIndex === facilities.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
-    <section className="py-12 md:py-16 px-6 bg-white">
+    <section id="instalacoes" className="py-12 md:py-16 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900">Nossas Instalações</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900">
+          Nossas Instalações
+        </h2>
         <p className="text-slate-700 mb-8 leading-relaxed">
-          Conheça nosso espaço acolhedor e preparado para oferecer o melhor ambiente para sua recuperação.
+          Conheça nosso espaço acolhedor e preparado para oferecer o melhor
+          ambiente para sua recuperação.
         </p>
 
         <div className="relative">
@@ -113,7 +120,9 @@ export function Facilities() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all ${
-                  index === currentIndex ? "w-8 bg-emerald-500" : "w-2 bg-slate-300 hover:bg-slate-400"
+                  index === currentIndex
+                    ? "w-8 bg-emerald-500"
+                    : "w-2 bg-slate-300 hover:bg-slate-400"
                 }`}
                 aria-label={`Ir para imagem ${index + 1}`}
               />
@@ -127,5 +136,5 @@ export function Facilities() {
         </div>
       </div>
     </section>
-  )
+  );
 }

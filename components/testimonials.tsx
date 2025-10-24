@@ -15,7 +15,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-12 md:py-16 px-6 bg-slate-50">
+    <section id="depoimentos" className="py-12 md:py-16 px-6 bg-slate-50">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-slate-900">
           Depoimentos
