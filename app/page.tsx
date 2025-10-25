@@ -14,8 +14,8 @@ export default function Home() {
       <AboutTherapy />
       <Testimonials />
       <Facilities />
-      <BlogPreview />
       <SocialMedia />
+      <BlogPreview />
       <ContactForm />
       <LocationMap />
     </main>
