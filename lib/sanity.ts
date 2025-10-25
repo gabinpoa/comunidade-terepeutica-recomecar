@@ -1,4 +1,7 @@
 import { createClient } from "next-sanity";
+import createImageUrlBuilder from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { SanityImageAsset } from '@sanity/asset-utils';
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
@@ -7,17 +10,28 @@ export const client = createClient({
   useCdn: true,
 });
 
+// https://www.sanity.io/docs/image-url
+const builder = createImageUrlBuilder({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+});
+
+export const urlFor = (source: SanityImageSource) => {
+  return builder.image(source);
+};
+
+export interface MainImage {
+  alt?: string;
+  asset: SanityImageAsset;
+}
+
 export interface BlogPost {
   _id: string;
   title: string;
   slug: {
     current: string;
   };
-  mainImage: {
-    asset: {
-      url: string;
-    };
-  };
+  mainImage: MainImage;
   publishedAt: string;
   body?: any;
   videoUrls?: string[];
@@ -29,9 +43,7 @@ export async function getBlogPosts(limit?: number): Promise<BlogPost[]> {
     title,
     slug,
     mainImage {
-      asset-> {
-        url
-      }
+      asset->
     },
     publishedAt,
     body,
@@ -52,9 +64,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     title,
     slug,
     mainImage {
-      asset-> {
-        url
-      }
+      asset-> 
     },
     publishedAt,
     body,
