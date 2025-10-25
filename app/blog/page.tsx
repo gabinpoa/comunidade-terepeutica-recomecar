@@ -33,7 +33,7 @@ export default async function BlogPage() {
             {posts.map((post) => (
               <Link key={post._id} href={`/blog/${post.slug.current}`} className="group">
                 <article className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+                  <div className="relative aspect-4/3 overflow-hidden bg-neutral-200">
                     <img
                       src={post.mainImage?.asset?.url || "/placeholder.svg?height=300&width=400&query=blog post"}
                       alt={post.title}

@@ -43,7 +43,7 @@ export default async function BlogPostPage({
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Featured Image */}
         {post.mainImage?.asset?.url && (
-          <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-neutral-200 mb-8">
+          <div className="relative aspect-video overflow-hidden rounded-lg bg-neutral-200 mb-8">
             <img
               src={post.mainImage.asset.url || "/placeholder.svg"}
               alt={post.title}
