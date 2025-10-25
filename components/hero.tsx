@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, MessageCircle, Phone, ChevronDown, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Urbanist } from "next/font/google";
+import Image from "next/image";
+
+const urbanist = Urbanist({ subsets: ["latin"] });
 
 export function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,15 +28,15 @@ export function Hero() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-black"
-            : "bg-gradient-to-b from-black/60 via-black/30 to-transparent backdrop-blur-sm"
+            : "bg-[linear-gradient(180deg,#000000_0%,rgba(0,0,0,0.56)_65.62%,rgba(1,1,1,0)_99.96%,rgba(30,30,30,0)_99.97%,rgba(30,30,30,0)_99.98%)]"
         }`}
       >
         <div className="flex items-center justify-between p-4 md:p-6">
           <Link
             href="/"
-            className="text-white text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity"
+            className={`${urbanist.className} text-white text-2xl font-medium hover:opacity-80 transition-opacity`}
           >
-            recomeçar
+            ct recomeçar
           </Link>
           <button
             className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
@@ -40,9 +44,9 @@ export function Hero() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-8 h-8" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-8 h-8" />
             )}
           </button>
         </div>
@@ -100,44 +104,73 @@ export function Hero() {
         )}
       </header>
 
-      <section className="relative h-[85vh] min-h-[600px] flex flex-col bg-slate-800">
+      <section className="relative h-[88vh] min-h-[600px] flex flex-col bg-[linear-gradient(145deg,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_100%)]">
         {/* Background Image Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="absolute -z-10 inset-0 bg-cover bg-position-[right_-200px_top] md:bg-center"
           style={{
-            backgroundImage:
-              "url(/placeholder.svg?height=800&width=600&query=peaceful+nature+therapy+background)",
+            backgroundImage: "url(/background1600.jpg)",
           }}
         />
-
         <div className="pt-20 md:pt-24" />
 
         {/* Hero Content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center">
-          <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-balance">
-            Recomeçar: Tratamento de dependência química
-          </h2>
-          <p className="text-white/90 text-base md:text-lg max-w-md mb-8 text-pretty">
-            Centro de acolhimento feminino em um Nova Santa Rita
-          </p>
+        <div className="relative z-10 flex-1 flex flex-col justify-around px-6 text-center">
+          <div className="text-left max-w-[26ch] sm:text-center sm:max-w-none flex flex-col gap-4 sm:place-items-center">
+            <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-semibold text-balance leading-[37.5px] md:leading-normal">
+              Comunidade Terapêutica Recomeçar
+            </h2>
+
+            <p className="text-white/90 text-base md:text-lg max-w-md text-pretty">
+              Centro de acolhimento feminino em um Nova Santa Rita - RS
+            </p>
+          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col gap-3 w-full max-w-xs">
-            <Button
-              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
-              size="lg"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Enviar Mensagem
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full bg-white/10 hover:bg-white/20 text-white border-white/30 gap-2 backdrop-blur-sm"
-              size="lg"
-            >
-              <Phone className="w-5 h-5" />
-              Ligar Agora
-            </Button>
+          <div className="w-full flex justify-center">
+            <div className="flex flex-col gap-3 w-full max-w-xs text-xl">
+              <Button
+                asChild
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2"
+                size="lg"
+              >
+                <Link
+                  href={
+                    "https://wa.me/5551995652811" +
+                    "?text=" +
+                    encodeURI(
+                      "Olá! Tenho interesse no acolhimento para mulheres na Comunidade Terapêutica Recomeçar. Gostaria de saber mais sobre o tratamento e como funciona o processo de acolhimento voluntário."
+                    )
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/whats.svg"
+                    alt="Ícone WhatsApp"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                  Enviar Mensagem
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full bg-white/10 hover:bg-white/20 text-white border-white/30 gap-2 backdrop-blur-sm"
+                size="lg"
+              >
+                <Link
+                  href="tel:+5551995652811"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Phone className="w-5 h-5" />
+                  Ligar Agora
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
 

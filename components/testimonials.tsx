@@ -31,7 +31,7 @@ export function Testimonials() {
               className="bg-white rounded-lg overflow-hidden shadow-sm"
             >
               <img
-                src={testimonial.image || "/placeholder.svg"}
+                src={"placeholder.avif"}
                 alt={testimonial.name}
                 className="w-full h-64 md:h-80 object-cover"
               />

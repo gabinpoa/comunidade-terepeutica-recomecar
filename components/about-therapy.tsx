@@ -33,7 +33,7 @@ export function AboutTherapy() {
         {/* Image */}
         <div className="mb-6 rounded-lg overflow-hidden">
           <img
-            src="/women-hugging-support-group-therapy.jpg"
+            src="/placeholder.avif"
             alt="Terapia em grupo"
             className="w-full h-64 md:h-80 object-cover"
           />
@@ -51,7 +51,7 @@ export function AboutTherapy() {
         <div className="space-y-6">
           {stages.map((stage) => (
             <div key={stage.number} className="flex gap-4">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">
                   {stage.number}
                 </div>

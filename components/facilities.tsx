@@ -87,7 +87,7 @@ export function Facilities() {
           {/* Main Image */}
           <div className="relative overflow-hidden rounded-lg bg-slate-200 mb-6">
             <img
-              src={facilities[currentIndex].image || "/placeholder.svg"}
+              src={"/placeholder.avif"}
               alt={facilities[currentIndex].alt}
               className="w-full h-64 md:h-80 object-cover"
             />

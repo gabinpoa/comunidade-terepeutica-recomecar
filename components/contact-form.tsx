@@ -5,8 +5,9 @@ import type React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MessageCircle } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -34,6 +35,7 @@ export function ContactForm() {
               Nome:
             </Label>
             <Input
+              disabled
               id="name"
               type="text"
               value={formData.name}
@@ -50,6 +52,7 @@ export function ContactForm() {
               Telefone:
             </Label>
             <Input
+              disabled
               id="phone"
               type="tel"
               value={formData.phone}
@@ -65,19 +68,38 @@ export function ContactForm() {
             type="submit"
             className="w-full bg-slate-800 hover:bg-slate-900 text-white"
             size="lg"
+            disabled
           >
-            Pedir Contato
+            Pedir Contato (Indisponível)
           </Button>
         </form>
 
         <div className="mt-6 text-center">
           <p className="text-slate-700 mb-3">OU:</p>
           <Button
-            className="w-full bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2"
             size="lg"
           >
-            <MessageCircle className="w-5 h-5" />
-            Whatsapp Agora
+                <Link
+                  href={
+                    "https://wa.me/5551995652811" +
+                    "?text=" +
+                    encodeURI(
+                      "Olá! Tenho interesse no acolhimento para mulheres na Comunidade Terapêutica Recomeçar. Gostaria de saber mais sobre o tratamento e como funciona o processo de acolhimento voluntário."
+                    )
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/whats.svg"
+                    alt="Ícone WhatsApp"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                  WhatsApp Agora
+                </Link>
           </Button>
         </div>
       </div>
