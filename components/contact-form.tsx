@@ -77,6 +77,7 @@ export function ContactForm() {
         <div className="mt-6 text-center">
           <p className="text-slate-700 mb-3">OU:</p>
           <Button
+            asChild
             className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2"
             size="lg"
           >
