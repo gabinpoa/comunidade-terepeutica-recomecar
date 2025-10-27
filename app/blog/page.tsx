@@ -12,10 +12,10 @@ export default async function BlogPage() {
       <div className="pt-20 md:pt-24" />
 
       {/* Page Header */}
-      <div className="bg-slate-900 text-white py-12 md:py-16 px-6">
+      <div className="text-black py-12 md:py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Notícias e Artigos</h1>
-          <p className="text-slate-300 text-lg">Informações sobre tratamento e recuperação</p>
+          <p className="text-black text-lg">Informações sobre tratamento e recuperação</p>
         </div>
       </div>
 
