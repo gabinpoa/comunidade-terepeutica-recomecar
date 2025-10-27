@@ -1,46 +1,38 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { getBlogPost, getBlogPosts } from "@/lib/sanity";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import { PortableText } from "@portabletext/react";
-import { YouTubeEmbed } from "@/components/youtube-embed";
+import { notFound } from "next/navigation"
+import { getBlogPost, getBlogPosts } from "@/lib/sanity"
+import { BlogHeader } from "@/components/blog-header"
+import { PortableText } from "@portabletext/react"
+import { YouTubeEmbed } from "@/components/youtube-embed"
 
 export async function generateStaticParams() {
-  const posts = await getBlogPosts();
+  const posts = await getBlogPosts()
   return posts.map((post) => ({
     slug: post.slug.current,
-  }));
+  }))
 }
 
 export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }) {
-  const { slug } = await params;
-  const post = await getBlogPost(slug);
+  const { slug } = await params
+  const post = await getBlogPost(slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <header className="bg-white border-b border-neutral-200">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/blog">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Voltar ao blog
-            </Link>
-          </Button>
-        </div>
-      </header>
+      <BlogHeader backLink="/blog" backText="Voltar ao blog" />
+
+      {/* Padding-top to account for fixed header */}
+      <div className="pt-20 md:pt-24" />
 
       {/* Article */}
-      <article className="max-w-4xl mx-auto px-4 py-12">
+      <article className="max-w-4xl mx-auto px-6 py-12">
         {/* Featured Image */}
         {post.mainImage?.asset?.url && (
           <div className="relative aspect-video overflow-hidden rounded-lg bg-neutral-200 mb-8">

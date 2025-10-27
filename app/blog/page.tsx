@@ -1,29 +1,26 @@
 import Link from "next/link"
 import { getBlogPosts } from "@/lib/sanity"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
+import { BlogHeader } from "@/components/blog-header"
 
 export default async function BlogPage() {
   const posts = await getBlogPosts()
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      {/* Header */}
-      <header className="bg-white border-b border-neutral-200">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <Button asChild variant="ghost" size="sm" className="mb-4">
-            <Link href="/">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Voltar
-            </Link>
-          </Button>
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900">Blog</h1>
-          <p className="text-neutral-600 mt-2">Notícias, artigos e informações sobre tratamento e recuperação</p>
+    <div className="min-h-screen bg-slate-50">
+      <BlogHeader backLink="/" backText="Voltar" />
+
+      <div className="pt-20 md:pt-24" />
+
+      {/* Page Header */}
+      <div className="bg-slate-900 text-white py-12 md:py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Notícias e Artigos</h1>
+          <p className="text-slate-300 text-lg">Informações sobre tratamento e recuperação</p>
         </div>
-      </header>
+      </div>
 
       {/* Blog Posts */}
-      <main className="max-w-6xl mx-auto px-4 py-12">
+      <main className="max-w-4xl mx-auto px-6 py-12 md:py-16">
         {posts.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-neutral-600 text-lg">Nenhum artigo publicado ainda.</p>
