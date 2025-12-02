@@ -122,7 +122,7 @@ export function Hero() {
             </h2>
 
             <p className="text-white/90 text-base md:text-lg max-w-md text-pretty">
-              Centro de acolhimento feminino em um Nova Santa Rita - RS
+              Comunidade de acolhimento feminino em Nova Santa Rita - RS
             </p>
           </div>
 

@@ -5,56 +5,57 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const facilities = [
-  {
-    id: 1,
-    image: "/modern-therapy-room-with-comfortable-seating.jpg",
-    alt: "Sala de terapia confortável",
-  },
-  {
-    id: 2,
-    image: "/peaceful-meditation-garden.jpg",
-    alt: "Jardim para meditação",
-  },
-  {
-    id: 3,
-    image: "/bright-dining-room-with-healthy-meals.jpg",
-    alt: "Refeitório",
-  },
-  {
-    id: 4,
-    image: "/cozy-bedroom-natural-light.png",
-    alt: "Quarto acolhedor",
-  },
-  {
-    id: 5,
-    image: "/exercise-room-with-fitness-equipment.jpg",
-    alt: "Sala de exercícios",
-  },
-  {
-    id: 6,
-    image: "/group-therapy-circle-with-chairs.jpg",
-    alt: "Espaço para terapia em grupo",
-  },
-  {
-    id: 7,
-    image: "/outdoor-recreation-area.jpg",
-    alt: "Área de recreação",
-  },
-  {
-    id: 8,
-    image: "/quiet-reading-library.jpg",
-    alt: "Biblioteca",
-  },
-  {
-    id: 9,
-    image: "/art-therapy-studio.jpg",
-    alt: "Sala de arte terapia",
-  },
-  {
-    id: 10,
-    image: "/peaceful-outdoor-patio.jpg",
-    alt: "Pátio externo",
-  },
+	{
+		id: 1,
+		image: "/arcoiris.jpg",
+		alt: "Arco-íris",
+	},
+	{
+		id: 2,
+		image: "/patio.jpg",
+		alt: "Pátio",
+	},
+	{
+		id: 3,
+		image: "/cachorro.jpg",
+		alt: "Cachorro",
+	},
+	{
+		id: 4,
+		image: "/floresarvore.jpg",
+		alt: "Flores e árvore",
+	},
+	{
+		id: 5,
+		image: "/grupo.jpg",
+		alt: "Grupo de pessoas",
+	},
+	{
+		id: 6,
+		image: "/patio9por16.jpg",
+		alt: "Pátio 9 por 16",
+	},
+	{
+		id: 7,
+		image: "/arvore.jpg",
+		alt: "Árvore",
+	},
+	{
+		id: 8,
+		image: "/beliche.jpg",
+		alt: "Beliche",
+	},
+	{
+		id: 9,
+		image: "/estante.jpg",
+		alt: "Estante",
+	},
+	{
+		id: 10,
+		image: "/gramado.jpg",
+		alt: "Gramado",
+	},
+
 ];
 
 export function Facilities() {
@@ -87,9 +88,9 @@ export function Facilities() {
           {/* Main Image */}
           <div className="relative overflow-hidden rounded-lg bg-slate-200 mb-6">
             <img
-              src={"/placeholder.avif"}
+              src={facilities[currentIndex].image}
               alt={facilities[currentIndex].alt}
-              className="w-full h-64 md:h-80 object-cover"
+              className="w-full h-auto object-contain max-h-[500px]"
             />
           </div>
 
