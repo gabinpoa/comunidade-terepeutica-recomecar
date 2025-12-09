@@ -85,11 +85,11 @@ export function Facilities() {
 
         <div className="relative">
           {/* Main Image */}
-          <div className="relative overflow-hidden rounded-lg bg-light-wisteria-100 mb-6">
+          <div className="relative overflow-hidden rounded-lg bg-light-wisteria-100 mb-6 aspect-square">
             <img
               src={facilities[currentIndex].image}
               alt={facilities[currentIndex].alt}
-              className="w-full h-auto object-contain max-h-[500px]"
+              className="w-full h-full object-contain object-center bg-transparent"
             />
           </div>
 
