@@ -22,9 +22,9 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contato" className="py-12 md:py-16 px-6 bg-amber-50">
+    <section id="contato" className="py-12 md:py-16 px-6 bg-punga-50">
       <div className="max-w-md mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-slate-900">
+        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-light-wisteria-950">
           Fale Conosco
         </h2>
         <p className="text-slate-700 mb-6">Estamos aqui para ajudar.</p>

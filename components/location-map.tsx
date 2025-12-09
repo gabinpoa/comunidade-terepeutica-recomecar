@@ -1,9 +1,9 @@
 export function LocationMap() {
   return (
-    <section className="py-12 md:py-16 px-6 bg-slate-50">
+    <section className="py-12 md:py-16 px-6">
       <div className="max-w-4xl mx-auto">
         {/* Map Placeholder */}
-        <div className="mb-6 rounded-lg overflow-hidden bg-slate-200 h-64 md:h-80 flex items-center justify-center">
+        <div className="mb-6 rounded-lg overflow-hidden bg-light-wisteria-100 h-64 md:h-80 flex items-center justify-center">
           <iframe
             title="map-overlay"
             style={{

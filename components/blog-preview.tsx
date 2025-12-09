@@ -12,7 +12,7 @@ export async function BlogPreview() {
   return (
     <section className="py-12 md:py-16 px-6 bg-slate-50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-slate-900">Notícias e Artigos</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-light-wisteria-950">Notícias e Artigos</h2>
 
         <div className="space-y-8">
           {posts.map((post) => (
@@ -32,7 +32,7 @@ export async function BlogPreview() {
                   )}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-500 transition-colors mb-2">
+                  <h3 className="text-xl font-bold text-light-wisteria-950 group-hover:text-emerald-500 transition-colors mb-2">
                     {post.title}
                   </h3>
                   {post.publishedAt && (

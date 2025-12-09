@@ -153,7 +153,7 @@ export function AboutTherapy() {
   return (
     <section id="sobre" className="py-12 md:py-16 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900">Sobre a Terapia</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-light-wisteria-950">Sobre a Terapia</h2>
 
         <div className="mb-8 rounded-lg overflow-hidden">
           <img
@@ -163,18 +163,18 @@ export function AboutTherapy() {
           />
         </div>
 
-        <p className="text-slate-700 mb-10 leading-relaxed">
+        <p className="text-light-wisteria-800 mb-10 leading-relaxed">
           Aqui, a recuperação acontece de forma integral, fortalecendo aspectos emocionais, físicos, sociais,
           espirituais e comportamentais, desenvolvendo autonomia e novas estratégias de vida com foco na sobriedade
           estável e reinserção social saudável.
         </p>
 
-        <div className="mb-10 p-6 bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-lg border-l-4 border-emerald-500">
+        <div className="mb-10 p-6 bg-linear-to-r from-emerald-50 to-emerald-100 rounded-lg border-l-4 border-emerald-500">
           <h3 className="text-lg md:text-xl font-bold text-emerald-900 mb-3">Objetivo Geral do Programa</h3>
-          <p className="text-slate-700 leading-relaxed">{keyComponents[0].description}</p>
+          <p className="text-neutral-700 leading-relaxed">{keyComponents[0].description}</p>
         </div>
 
-        <h3 className="text-xl md:text-2xl font-bold mb-6 text-slate-900">Componentes Principais:</h3>
+        <h3 className="text-xl md:text-2xl font-bold mb-6 text-light-wisteria-950">Componentes Principais:</h3>
 
         <div className="space-y-3 mb-10">
           {expandableComponents.map((component) => (
@@ -204,17 +204,17 @@ export function AboutTherapy() {
                     </span>
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-slate-900 text-sm md:text-base mb-1 flex items-center gap-2">
+                    <h4 className="font-bold text-light-wisteria-950 text-sm md:text-base mb-1 flex items-center gap-2">
                       {component.title}
                       <ChevronDown
                         size={18}
-                        className={`inline text-slate-600 transition-transform duration-300 flex-shrink-0 ${
+                        className={`inline text-neutral-600 transition-transform duration-300 flex-shrink-0 ${
                           expandedId === component.id ? "rotate-180" : ""
                         }`}
                         aria-hidden="true"
                       />
                     </h4>
-                    <p className="text-slate-700 text-xs md:text-sm leading-relaxed">{component.description}</p>
+                    <p className="text-light-wisteria-800 text-xs md:text-sm leading-relaxed">{component.description}</p>
                   </div>
                 </div>
 
@@ -224,11 +224,11 @@ export function AboutTherapy() {
                   }`}
                 >
                   {component.details.length > 0 && (
-                    <div className="mt-4 pt-4 border-t border-slate-300 border-opacity-30">
+                    <div className="mt-4 pt-4 border-t border-neutral-300 border-opacity-30">
                       <ul className="space-y-2">
                         {component.details.map((detail, index) => (
-                          <li key={index} className="text-slate-600 text-xs md:text-sm leading-relaxed flex gap-2">
-                            <span className="text-slate-400 flex-shrink-0">•</span>
+                          <li key={index} className="text-neutral-600 text-xs md:text-sm leading-relaxed flex gap-2">
+                            <span className="text-neutral-400 flex-shrink-0">•</span>
                             <span>{detail}</span>
                           </li>
                         ))}
@@ -241,16 +241,16 @@ export function AboutTherapy() {
           ))}
         </div>
 
-        <h3 className="text-xl md:text-2xl font-bold mb-6 text-slate-900">Atividades Complementares:</h3>
+        <h3 className="text-xl md:text-2xl font-bold mb-6 text-light-wisteria-950">Atividades Complementares:</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {chipComponents.map((chip, index) => (
             <div
               key={index}
-              className="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors"
+              className="p-4 bg-light-wisteria-50 rounded-lg border border-light-wisteria-200 hover:bg-light-wisteria-100 transition-colors"
             >
-              <h4 className="font-semibold text-slate-900 text-sm md:text-base mb-2">{chip.title}</h4>
-              <p className="text-slate-600 text-xs md:text-sm">{chip.description}</p>
+              <h4 className="font-semibold text-light-wisteria-950 text-sm md:text-base mb-2">{chip.title}</h4>
+              <p className="text-neutral-600 text-xs md:text-sm">{chip.description}</p>
             </div>
           ))}
         </div>

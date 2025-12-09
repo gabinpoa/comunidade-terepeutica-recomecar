@@ -76,7 +76,7 @@ export function Facilities() {
   return (
     <section id="instalacoes" className="py-12 md:py-16 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-light-wisteria-950">
           Nossas Instalações
         </h2>
         <p className="text-slate-700 mb-8 leading-relaxed">
@@ -86,7 +86,7 @@ export function Facilities() {
 
         <div className="relative">
           {/* Main Image */}
-          <div className="relative overflow-hidden rounded-lg bg-slate-200 mb-6">
+          <div className="relative overflow-hidden rounded-lg bg-light-wisteria-100 mb-6">
             <img
               src={facilities[currentIndex].image}
               alt={facilities[currentIndex].alt}

@@ -24,7 +24,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-light-wisteria-50">
       {/* Header */}
       <BlogHeader backLink="/blog" backText="Voltar ao blog" />
 
@@ -55,14 +55,14 @@ export default async function BlogPostPage({
               })}
             </time>
           )}
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-light-wisteria-950 mb-4">
             {post.title}
           </h1>
         </header>
 
         {post.videoUrls && post.videoUrls.length > 0 && (
           <div className="mt-12 space-y-6">
-            <h2 className="text-2xl font-bold text-neutral-900">
+            <h2 className="text-2xl font-bold text-light-wisteria-950">
               {post.videoUrls.length === 1 ? "Vídeo" : "Vídeos"}
             </h2>
             <div className="space-y-6">

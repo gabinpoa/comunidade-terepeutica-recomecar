@@ -12,10 +12,10 @@ export default async function BlogPage() {
       <div className="pt-20 md:pt-24" />
 
       {/* Page Header */}
-      <div className="text-black py-12 md:py-16 px-6">
+      <div className="text-light-wisteria-950 py-12 md:py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Notícias e Artigos</h1>
-          <p className="text-black text-lg">Informações sobre tratamento e recuperação</p>
+          <p className="text-light-wisteria-950 text-lg">Informações sobre tratamento e recuperação</p>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ export default async function BlogPage() {
                         })}
                       </time>
                     )}
-                    <h2 className="text-xl font-semibold text-neutral-900 group-hover:text-emerald-600 transition-colors mb-2 line-clamp-2">
+                    <h2 className="text-xl font-semibold text-light-wisteria-950 group-hover:text-emerald-600 transition-colors mb-2 line-clamp-2">
                       {post.title}
                     </h2>
                   </div>
