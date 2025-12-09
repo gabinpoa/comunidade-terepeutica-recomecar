@@ -6,14 +6,9 @@ import { Button } from "@/components/ui/button";
 
 const facilities = [
 	{
-		id: 1,
-		image: "/arcoiris.jpg",
-		alt: "Arco-íris",
-	},
-	{
-		id: 2,
-		image: "/patio.jpg",
-		alt: "Pátio",
+		id: 4,
+		image: "/floresarvore.jpg",
+		alt: "Flores e árvore",
 	},
 	{
 		id: 3,
@@ -21,24 +16,9 @@ const facilities = [
 		alt: "Cachorro",
 	},
 	{
-		id: 4,
-		image: "/floresarvore.jpg",
-		alt: "Flores e árvore",
-	},
-	{
-		id: 5,
-		image: "/grupo.jpg",
-		alt: "Grupo de pessoas",
-	},
-	{
-		id: 6,
-		image: "/patio9por16.jpg",
-		alt: "Pátio 9 por 16",
-	},
-	{
-		id: 7,
-		image: "/arvore.jpg",
-		alt: "Árvore",
+		id: 2,
+		image: "/patio.jpg",
+		alt: "Pátio",
 	},
 	{
 		id: 8,
@@ -51,11 +31,30 @@ const facilities = [
 		alt: "Estante",
 	},
 	{
+		id: 5,
+		image: "/grupo.jpg",
+		alt: "Grupo de pessoas",
+	},
+	{
+		id: 6,
+		image: "/patio9por16.jpg",
+		alt: "Pátio 9 por 16",
+	},
+	{
+		id: 1,
+		image: "/arcoiris.jpg",
+		alt: "Arco-íris",
+	},
+	{
+		id: 7,
+		image: "/arvore.jpg",
+		alt: "Árvore",
+	},
+	{
 		id: 10,
 		image: "/gramado.jpg",
 		alt: "Gramado",
 	},
-
 ];
 
 export function Facilities() {
@@ -86,11 +85,11 @@ export function Facilities() {
 
         <div className="relative">
           {/* Main Image */}
-          <div className="relative overflow-hidden rounded-lg bg-light-wisteria-100 mb-6">
+          <div className="relative overflow-hidden rounded-lg bg-light-wisteria-100 mb-6 aspect-square">
             <img
               src={facilities[currentIndex].image}
               alt={facilities[currentIndex].alt}
-              className="w-full h-auto object-contain max-h-[500px]"
+              className="w-full h-full object-contain object-center bg-transparent"
             />
           </div>
 
