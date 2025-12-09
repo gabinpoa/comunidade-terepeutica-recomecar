@@ -7,8 +7,8 @@ import "./globals.css"
 const workSans = Work_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Recomeçar - Tratamento de Dependência Química",
-  description: "Centro de acolhimento feminino em Nova Santa Rita",
+  title: "Comunidade Terapêutica Recomeçar - Tratamento de Dependência Química",
+  description: "Comunidade de acolhimento feminino em Nova Santa Rita",
   generator: "v0.app",
 }
 
