@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Urbanist } from "next/font/google";
 import Image from "next/image";
+import logoFlatIcon from "@/public/logo-flat-icon.svg";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -26,8 +27,8 @@ export function Hero() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-black"
+          isScrolled || isMenuOpen
+            ? "bg-light-wisteria-400"
             : "bg-[linear-gradient(180deg,#000000_0%,rgba(0,0,0,0.56)_65.62%,rgba(1,1,1,0)_99.96%,rgba(30,30,30,0)_99.97%,rgba(30,30,30,0)_99.98%)]"
         }`}
       >
@@ -36,10 +37,16 @@ export function Hero() {
             href="/"
             className={`${urbanist.className} text-white text-2xl font-medium hover:opacity-80 transition-opacity`}
           >
-            ct recomeçar
+            <Image
+            src={logoFlatIcon}
+            alt="Logo Comunidade Terapêutica Recomeçar"
+            width={44}
+            height={44}
+            className={isScrolled || isMenuOpen ? "invert filter brightness-0" : ""}
+             />
           </Link>
           <button
-            className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className={`${isScrolled || isMenuOpen ? "text-white" : "text-light-wisteria-400"} p-2 hover:bg-black/10 rounded-lg transition-colors`}
             aria-label="Menu"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -52,12 +59,12 @@ export function Hero() {
         </div>
 
         {isMenuOpen && (
-          <nav className="bg-black border-t border-white/10">
+          <nav className="bg-light-wisteria-400 border-t border-white/10">
             <ul className="flex flex-col">
               <li>
                 <Link
                   href="/#sobre"
-                  className="block px-6 py-4 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-4 text-white hover:bg-black/10 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sobre a Terapia
@@ -66,7 +73,7 @@ export function Hero() {
               <li>
                 <Link
                   href="/#instalacoes"
-                  className="block px-6 py-4 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-4 text-white hover:bg-black/10 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Nossas Instalações
@@ -75,7 +82,7 @@ export function Hero() {
               <li>
                 <Link
                   href="/#depoimentos"
-                  className="block px-6 py-4 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-4 text-white hover:bg-black/10 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Depoimentos
@@ -84,7 +91,7 @@ export function Hero() {
               <li>
                 <Link
                   href="/blog"
-                  className="block px-6 py-4 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-4 text-white hover:bg-black/10 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Notícias e Artigos
@@ -93,7 +100,7 @@ export function Hero() {
               <li>
                 <Link
                   href="/#contato"
-                  className="block px-6 py-4 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-4 text-white hover:bg-black/10 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contato
